@@ -79,18 +79,22 @@
         </main>
 
         <!-- conceptual question works  -->
-        <section class="w-50 mx-auto mt-5">
+        <section id="conceptual" class="w-50 mx-auto mt-5">
             <h3 class="text-center mt-5">Conceptual Question</h3>
-            <div class="border p-3">
+            <div class="rounded border p-3 mt-5">
                 <h5>How Does JavaScript Works ?</h5>
-                <p><strong>Ans:</strong>First of all js is single threaded language.And its read the code line by line.Its execute the code once by once.When we write code its store in a memory.Its set all variable value undefined. For the function its set the value in parentheses.when code is execute line by line then its set the value.When function is called the same thing is repeated for the function and a new Global Execution Context is created for the every code.And every code is run completly the execution context is deleted</p>
+                <p><strong>Ans:</strong> First of all js is single threaded language.And its read the code line by line.Its execute the code once by once.When we write code its store in a memory.Its set all variable value undefined. For the function its set the value in parentheses.when code is execute line by line then its set the value.When function is called the same thing is repeated for the function and a new Global Execution Context is created for the every code.And every code is run completly the execution context is deleted</p>
             </div>
-            <div class="border-rounded border p-3 mt-5">
-                <h5>How Does Event Loop Do</h5>
-                <p><strong>Ans:</strong>JavaScript is a single threated language.But the browser Api threaded works as seperatly.Browser Api provide this facilities.If a set time function is set then its send to the browser api.And untill his set time is not complete.When its time complete its send to the event queue.And the event loop is constently check when call stack will be empty.When event loop get chance its send the code event queue to call stack.Then the code is excute.</p>
+            <div class="rounded border p-3 mt-5">
+                <h5>How Does Event Loop Do ?</h5>
+                <p><strong>Ans:</strong> JavaScript is a single threated language.But the browser Api threaded works as seperatly.Browser Api provide this facilities.If a set time function is set then its send to the browser api.And untill his set time is not complete.When its time complete its send to the event queue.And the event loop is constently checking when call stack will be empty.When event loop get chance its send the code event queue to call stack.Then the code is excute.The main work for event loop is check the queue its empty or not.</p>
+            </div>
+            <div class="rounded-1 border p-3 mt-5 mb-4">
+                <h5>What is defference between session storage and local storage ?</h5>
+                <p><strong>Ans:</strong> The difference between local storage and session strorage.Session storage cant hold the data for long time.But local storage data will hold untill the browser cache cleared or any user delete it.</p>
             </div>
         </section>
-
+         
 
         <footer></footer>
 
