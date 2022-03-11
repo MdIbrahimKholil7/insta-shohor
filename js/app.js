@@ -47,17 +47,27 @@ const switchTab = (id) => {
     document.getElementById("liked").style.display = "none";
     document.getElementById("reported").style.display = "none";
     document.getElementById("conceptual").style.display = "block";
+    document.getElementById('title-liked').style.display='none'
+    document.getElementById('report-title').style.display='none'
+
   } else if (id === "liked") {
+    document.getElementById('title-liked').style.display='block'
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
     document.getElementById("conceptual").style.display = "none";
+    document.getElementById('report-title').style.display='none'
+
     displayLikedPosts();
   } else {
+    document.getElementById('title-liked').style.display='none'
+    document.getElementById('report-title').style.display='block'
     document.getElementById("reported").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("liked").style.display = "none";
     document.getElementById("conceptual").style.display = "none";
+    
+
     displayReportedPosts();
   }
 };
@@ -102,7 +112,6 @@ const createPost = (post) => {
                   </button>
                   <button class="post__button">
                     <i class="fa-solid fa-comment"></i>
-
                   </button>
                   
                   <div class="post__indicators"></div>
@@ -147,7 +156,6 @@ const showPosts = (posts) => {
   console.log(posts)
   const productsContainer = document.getElementById("posts");
   productsContainer.innerHTML = "";
-
   posts.forEach((post) => {
     const div = createPost(post);
     productsContainer.appendChild(div);
