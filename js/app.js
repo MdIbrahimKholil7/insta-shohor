@@ -1,5 +1,4 @@
 let posts = [];
-
 const likedPostsId = [];
 const reportedPostsId = [];
 
@@ -15,12 +14,18 @@ const isLiked = (id) => {
   return likedPostsId?.length && !!likedPostsId.includes(id);
 };
 
-const addToLiked = (id) => {
+let isL=true;
+const addToLiked = (id,elem) => {
   let contains = likedPostsId.indexOf(id)
+  // const getPost=getLikedPosts()
   if (contains === -1) {
     likedPostsId.push(id);
   }
-  showPosts(posts);
+  console.log(elem)
+  elem.classList.add('text-danger')
+  // isL?showPosts():showPosts(posts);
+  // showPosts(posts);
+  // loadPosts();
   console.log(isLiked(id))
   console.log(likedPostsId)
 };
@@ -28,6 +33,7 @@ const addToLiked = (id) => {
 const reportPost = (id) => {
   reportedPostsId.push(id);
   const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
+  console.log(remainingPosts)
   showPosts(remainingPosts);
 };
 
@@ -46,7 +52,6 @@ const switchTab = (id) => {
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
     document.getElementById("conceptual").style.display = "none";
-
     displayLikedPosts();
   } else {
     document.getElementById("reported").style.display = "block";
@@ -92,7 +97,7 @@ const createPost = (post) => {
 
               <div class="post__footer">
                 <div class="post__buttons">
-                  <button class="post__button" onclick="addToLiked(${post.id})">
+                  <button class="post__button" onclick="addToLiked(${post.id},this)">
                   <i class="fa-solid fa-heart ${isLiked(post.id) && "text-danger"}"></i>
                   </button>
                   <button class="post__button">
@@ -139,6 +144,7 @@ const createPost = (post) => {
 };
 
 const showPosts = (posts) => {
+  console.log(posts)
   const productsContainer = document.getElementById("posts");
   productsContainer.innerHTML = "";
 
