@@ -162,6 +162,7 @@ const showPosts = (posts) => {
   });
 };
 
+// display liked posts 
 const displayLikedPosts = () => {
   document.getElementById("liked").textContent = ''
   const likedPosts = getLikedPosts();
@@ -170,6 +171,7 @@ const displayLikedPosts = () => {
     document.getElementById("liked").appendChild(div);
   });
 };
+
 
 const displayReportedPosts = () => {
   document.getElementById("reported").textContent = ''
